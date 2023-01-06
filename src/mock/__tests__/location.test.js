@@ -7,14 +7,12 @@ function forward () {
 }
 
 
-function mockLocation () {
-  delete global.window.location
-  global.window.location = {}
-}
+// location 只读属性，须先 delete 再 mock
+delete global.window.location
+global.window.location = {}
 
 
 test('mock location', () => {
-  mockLocation()
   forward()
   expect(location.href).toBe('http://target')
 })
