@@ -7,6 +7,8 @@ test('expect', () => {
     c: [1, 2, 3]
   })
 
+  expect(Math.random()).toEqual(expect.any(Number))
+
   expect(spy).toHaveBeenCalledWith(expect.objectContaining({
     a: expect.any(Number),
     b: expect.stringContaining('y'),
