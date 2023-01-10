@@ -11,7 +11,7 @@ exports[`snapshot 1`] = `
   },
   "b": [
     {
-      "bb1": 1,
+      "bb1": "bbb",
     },
   ],
 }
