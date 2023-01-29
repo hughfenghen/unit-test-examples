@@ -8,7 +8,8 @@ function fetchData () {
   })
 }
 
-// 覆盖 fetch，固定返回一个 status: 500 的 Prmiose
+// 覆盖 fetch (jest 执行环境 fetch 值是 undefined，所以不能使用 jest.spyOn)
+// 固定返回一个 status: 500 的 Prmiose
 // 因为不希望运行单测时发送http请求
 global.window.fetch = jest.fn().mockReturnValue(Promise.resolve({ status: 500 }))
 
